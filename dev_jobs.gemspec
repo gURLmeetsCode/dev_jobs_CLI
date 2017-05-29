@@ -6,8 +6,8 @@ require "dev_jobs/version"
 Gem::Specification.new do |spec|
   spec.name          = "dev_jobs"
   spec.version       = DevJobs::VERSION
-  spec.authors       = ["YOUR NAME"]
-  spec.email         = ["YOUR@EMAIL.com"]
+  spec.authors       = ["Natasha Kelly"]
+  spec.email         = ["kellynatashav@yahoo.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
