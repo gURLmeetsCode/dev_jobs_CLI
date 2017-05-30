@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
 
-require "bundler/setup"
-require "dev_jobs"
+require "./lib/dev_jobs"
+
+DevJobs::CLI.new.call
