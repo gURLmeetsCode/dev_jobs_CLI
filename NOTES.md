@@ -6,9 +6,4 @@ Personal Objectives:
 Project Objectives:
 
 * When user installs GEM, I wanted he/she to be able to go search through the data by typing the associated number to the listed job post.
-* User should have visibility on the job title, company and location.
-
-
-Notes
-* currently I am not receiving a numbered list.
-* when you type a number it is giving all the data instead of the specified input 
+* User should have visibility on the job title, url and the date the job was posted.

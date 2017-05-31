@@ -2,59 +2,60 @@
 
 class DevJobs::CLI
   def call
+    DevJobs::Scraper.new.make_new_job_titles
     start
-    list
   end
 
-# current bug: not printing an number list for job posts.
   def list
     puts ""
     puts "************* Latest Junior Dev Job Postings from Stack Over Flow *************"
     puts ""
-    @jobs = DevJobs::Job.current
-    @jobs.each.with_index(1) do |post, index|
-      puts "#{index}. #{post.title} #{post.url}"
+    puts ""
+    puts ""
+    DevJobs::Job.all.each.with_index(1) do |job, index|
+      puts "#{index}. #{job.title}"
     end
     puts ""
   end
 
-# current bug: printing entire list of jobs instead of just the relavant input
 
-  def print_job(job)
-    puts ""
-    puts "-------------- #{job.title} --------------"
-    puts ""
-    puts "Company:            #{job.company}"
-    puts "Location:           #{job.location}"
-    puts "Website: #{job.url}"
-    puts "Job Post Date: #{job.date}"
-    puts ""
-    puts ""
+  def display_jobs(job)
+      puts "-------------- #{job.title} --------------"
+      puts ""
+      puts "Website:#{job.url}"
+      puts "Job Post Date: #{job.date}"
+      puts ""
+      puts ""
   end
 
-  def start
+
+
+
+def start
     list
     input = nil
     while input != "exit"
       puts ""
-      puts ""
       puts "What job would you like more information on? Type number"
       puts ""
-      puts ""
-      puts "Enter list to see the available jobs again."
+      puts "Enter list to see the jobs again."
       puts "Enter exit to end the program."
       puts ""
       input = gets.strip
       if input == "list"
         list
+      elsif input.to_i == 0
+        if job = DevJobs::Job.find_by_name(input)
+          display_jobs(job)
+        end
       elsif input.to_i > 0
-        if job = @jobs[input.to_i-1]
-          print_job(job)
+        if job = DevJobs::Job.all[input.to_i-1]
+          display_jobs(job)
         else
-          puts "Sorry I do not recognize that command."
+          puts "Sorry, im not sure we have what you are looking for. Type list to see the list of jobs again."
         end
       end
     end
-    puts "Good luck with your job search!"
+    puts "Goodluck with your job search!"
   end
 end

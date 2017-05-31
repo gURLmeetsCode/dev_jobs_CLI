@@ -1,7 +1,4 @@
-require 'open-uri'
-require 'pry'
-require 'nokogiri'
+module DevJobs
+end
 
-require_relative "./dev_jobs/version"
-require_relative "./dev_jobs/COMMAND_LINE_INTERFACE"
-require_relative "./dev_jobs/job"
+require_relative '../config/environment'
