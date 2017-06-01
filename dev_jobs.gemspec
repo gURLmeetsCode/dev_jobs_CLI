@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Natasha Kelly"]
   spec.email         = "kellynatashav@yahoo.com"
   spec.date          = "2017-05-31"
-  spec.files         = ["lib/dev_jobs.rb", "lib/dev_jobs/cli.rb", "lib/dev_jobs/scraper.rb", "lib/dev_jobs/job.rb", "config/environment.rb"]
+  spec.files         = ["lib/dev_jobs.rb", "lib/dev_jobs/COMMAND_LINE_INTERFACE.rb", "lib/dev_jobs/scraper.rb", "lib/dev_jobs/job.rb", "config/environment.rb"]
   spec.summary       = "Stackoverflow Bay Area Dev Jobs"
   spec.description   = "Provides the job title, job link and when it was posted on the website."
   spec.homepage      = 'https://github.com/gURLmeetsCode/dev_jobs_CLI.git'
