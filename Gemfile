@@ -5,6 +5,7 @@ gem "nokogiri"
 gem "rspec"
 gem "rake"
 gem "bundler"
+gem 'minitest'
 
 
 
